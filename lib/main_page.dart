@@ -34,6 +34,33 @@ class MainPage extends StatelessWidget {
           children: [Text("You need to do app bar and navigation bar")],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.newspaper,
+              size: 40,
+            ),
+            label: 'Жарнамалар',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add_circle,
+              size: 40,
+              color: Colors.red,
+            ),
+            label: 'Жарнама беруу',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.widgets,
+              size: 40,
+              color: Colors.blue,
+            ),
+            label: 'Меню',
+          ),
+        ],
+      ),
     );
   }
 }
