@@ -7,7 +7,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text("Naryn markets"),
+        child: Text("Naryn market"),
       ),
     );
   }
