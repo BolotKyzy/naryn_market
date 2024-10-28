@@ -7,7 +7,12 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text("Нарын Базар"),
+        child: Column(
+          children: [
+            Text("Нарын Базар"),
+            Text("You need to do app bar and navigation bar")
+          ],
+        ),
       ),
     );
   }
