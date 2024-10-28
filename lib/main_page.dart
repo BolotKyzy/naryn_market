@@ -6,8 +6,16 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Hello"),
+      ),
       body: Container(
-        child: Text("Naryn markets"),
+        child: Column(
+          children: [
+            Text("Нарын Базар"),
+            Text("You need to do app bar and navigation bar")
+          ],
+        ),
       ),
     );
   }
