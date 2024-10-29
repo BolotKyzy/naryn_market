@@ -1,7 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:naryn_market/menu_page.dart';
+import 'package:naryn_market/news.dart';
+import 'package:naryn_market/news_insert_page.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +45,9 @@ class MainPage extends StatelessWidget {
         title: Text("Нарын Базар"),
         centerTitle: true,
       ),
-      body: Container(
-        child: Column(
-          children: [Text("You need to do app bar and navigation bar")],
-        ),
-      ),
+      body: IndexedStack(
+          index: _selectedIndex,
+          children: const [News_Page(), NewsInsertPage(), MenuPage()]),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -60,6 +74,9 @@ class MainPage extends StatelessWidget {
             label: 'Меню',
           ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.amber[800],
+        onTap: _onItemTapped,
       ),
     );
   }
