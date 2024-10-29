@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:naryn_market/constants/app_bar.dart';
+import 'package:naryn_market/constants/colors.dart';
 import 'package:naryn_market/menu_page.dart';
-import 'package:naryn_market/news.dart';
+import 'package:naryn_market/news_page/news.dart';
 import 'package:naryn_market/news_insert_page.dart';
 
 class MainPage extends StatefulWidget {
@@ -22,36 +24,15 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.greenAccent,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
-          iconSize: 35,
-          color: const Color.fromARGB(255, 136, 21, 139),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.sort),
-            iconSize: 35,
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-            iconSize: 35,
-          )
-        ],
-        title: Text("Нарын Базар"),
-        centerTitle: true,
-      ),
+      appBar: AppBarWidget(),
       body: IndexedStack(
           index: _selectedIndex,
-          children: const [News_Page(), NewsInsertPage(), MenuPage()]),
+          children: const [NewsPage(), NewsInsertPage(), MenuPage()]),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
+              color: AppColors.blue,
               Icons.newspaper,
               size: 40,
             ),
@@ -69,13 +50,15 @@ class _MainPageState extends State<MainPage> {
             icon: Icon(
               Icons.widgets,
               size: 40,
-              color: Colors.blue,
+              color: AppColors.blue,
             ),
             label: 'Меню',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: AppColors.orange,
+        unselectedLabelStyle: TextStyle(fontFamily: 'NotoSans'),
+        selectedLabelStyle: TextStyle(fontFamily: 'NotoSans'),
         onTap: _onItemTapped,
       ),
     );

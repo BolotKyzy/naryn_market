@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/main_page.dart';
-import 'package:naryn_market/news.dart';
+import 'package:naryn_market/news_page/news.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,13 +14,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       initialRoute: '/',
       routes: {
         '/': (context) => const MainPage(),
-        'newsPage': (context) => const News_Page()
+        'newsPage': (context) => const NewsPage()
       },
     );
   }
