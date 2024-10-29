@@ -59,11 +59,15 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               const SizedBox(
                 width: 20,
               ),
-              const Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 30,
-              )
+              IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  Navigator.pushNamed(context, 'menuList');
+                },
+                // Icons.menu,
+                // color: Colors.white,
+                // size: 30,
+              ),
             ],
           ),
         ),

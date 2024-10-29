@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/main_page.dart';
+import 'package:naryn_market/menu_section/menu_list_page.dart';
 import 'package:naryn_market/news_page/news.dart';
+import 'package:naryn_market/news_page/widgets/categories.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +22,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const MainPage(),
-        'newsPage': (context) => const NewsPage()
+        'newsPage': (context) => const NewsPage(),
+        'menuList': (context) => const MenuList()
       },
     );
   }
