@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:naryn_market/constants/colors.dart';
 import 'package:naryn_market/main_page.dart';
 import 'package:naryn_market/menu_section/menu_list_page.dart';
 import 'package:naryn_market/news_page/news.dart';
-import 'package:naryn_market/news_page/widgets/categories.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        iconTheme: IconThemeData(color: AppColors.darkBlue, size: 30),
+        textTheme: TextTheme(
+            bodyMedium: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                fontFamily: 'NotoSans',
+                color: AppColors.blue)),
         useMaterial3: true,
       ),
       initialRoute: '/',
