@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: customLightTheme,
       // darkTheme: customDarkTheme,
-      themeMode: ThemeMode.system,
+      // themeMode: ThemeMode.system,
       // theme: ThemeData(
       //   appBarTheme: const AppBarTheme(iconTheme: IconThemeData(size: 40)),
       //   iconTheme: const IconThemeData(color: AppColors.darkBlue, size: 30),
