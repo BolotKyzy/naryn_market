@@ -1,102 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/constants/colors.dart';
 
-const categoriesList = [
-  {
-    "title": "Нарын кабарлар",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Автоунаа жана тетиктер",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Кыймылсыз мулк",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Телефондор (Электроника)",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Уй тиричилик техниакалар",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Эмеректер",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Скутер, велосипед, коляска",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Курулуш материалдар",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Тамак аш",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Жумуш",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Кызмат корсотуу",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Кафе, Ашкана, магазин",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Дыйкан чарба",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Мал чарба",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Канаттуулар",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Отун, комур",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Оюнчуктар, ",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Жоголду, табылды",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
-  {
-    "title": "Спорт буюмрары",
-    "icon":
-        "https://st-0.akipress.org/127/.storage/limon/images/2014leto/c430e644c9043043e2b0fc5d1200436c.jpg"
-  },
+List<Map> categoriesList = [
+  {"title": "Нарын кабарлар", "icon": Icons.campaign},
+  {"title": "Автоунаа жана тетиктер", "icon": Icons.car_rental},
+  {"title": "Кыймылсыз мулк", "icon": Icons.pets},
+  {"title": "Телефондор (Электроника)", "icon": Icons.devices_other},
+  {"title": "Уй тиричилик техникалар", "icon": Icons.bathtub},
+  {"title": "Эмеректер", "icon": Icons.chair},
+  {"title": "Скутер, велосипед, коляска", "icon": Icons.electric_bike},
+  {"title": "Курулуш материалдар", "icon": Icons.maps_home_work},
+  {"title": "Тамак аш", "icon": Icons.flatware},
+  {"title": "Жумуш", "icon": Icons.engineering},
+  {"title": "Кызмат корсотуу", "icon": Icons.construction},
+  {"title": "Кафе, Ашкана, магазин", "icon": Icons.table_bar},
+  {"title": "Дыйкан чарба", "icon": Icons.agriculture},
+  {"title": "Мал чарба", "icon": Icons.cabin},
+  {"title": "Кийим-кече", "icon": Icons.checkroom},
+  {"title": "Отун, комур", "icon": Icons.cabin},
+  {"title": "Оюнчуктар, ", "icon": Icons.toys},
+  {"title": "Жоголду, табылды", "icon": Icons.zoom_out},
+  {"title": "Спорт буюмрары", "icon": Icons.sports_soccer},
 ];
 
 class MenuPage extends StatelessWidget {
@@ -131,14 +55,14 @@ class MenuPage extends StatelessWidget {
                                           MainAxisAlignment.center,
                                       children: [
                                         Icon(
-                                          Icons.abc_sharp,
-                                          size: 20,
+                                          categoriesList[index]["icon"],
+                                          size: 30,
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(
                                               left: 5.0, right: 5.0),
                                           child: Text(
-                                              categoriesList[index]["title"]!,
+                                              categoriesList[index]["title"],
                                               textAlign: TextAlign.center,
                                               style: Theme.of(context)
                                                   .textTheme
