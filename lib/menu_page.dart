@@ -110,45 +110,50 @@ class MenuPage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Wrap(
-            spacing: 8.0,
-            runSpacing: 8.0,
-            children: List.generate(
-                categoriesList.length,
-                (index) => FractionallySizedBox(
-                      widthFactor: 0.315,
-                      child: Card(
-                          color: AppColors.grey,
-                          child: SizedBox(
-                            height: 140.0,
-                            child: InkWell(
-                              borderRadius: BorderRadius.circular(5.0),
-                              onTap: () {},
-                              child: Center(
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Icon(Icons.abc_sharp),
-                                      const SizedBox(height: 20.0),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            left: 5.0, right: 5.0),
-                                        child: Text(
-                                            categoriesList[index]["title"]!,
-                                            textAlign: TextAlign.center,
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .labelMedium!
-                                                .copyWith(
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.w400)),
-                                      ),
-                                    ]),
+          Center(
+            child: Wrap(
+              spacing: 8.0,
+              runSpacing: 8.0,
+              children: List.generate(
+                  categoriesList.length,
+                  (index) => FractionallySizedBox(
+                        widthFactor: 0.3,
+                        child: Card(
+                            color: AppColors.grey,
+                            child: SizedBox(
+                              height: 70.0,
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(5.0),
+                                onTap: () {},
+                                child: Center(
+                                  child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.abc_sharp,
+                                          size: 20,
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 5.0, right: 5.0),
+                                          child: Text(
+                                              categoriesList[index]["title"]!,
+                                              textAlign: TextAlign.center,
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .labelMedium!
+                                                  .copyWith(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w400)),
+                                        ),
+                                      ]),
+                                ),
                               ),
-                            ),
-                          )),
-                    )),
+                            )),
+                      )),
+            ),
           ),
           const SizedBox(
             height: 20,
