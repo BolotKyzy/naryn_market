@@ -21,7 +21,8 @@ class NewsList extends StatelessWidget {
                 Navigator.pushNamed(context, "newsDetailPage");
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 width: 190,
                 height: 250,
                 clipBehavior: Clip.hardEdge, //default is none
@@ -34,7 +35,6 @@ class NewsList extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-
                   Text(
                       maxLines: 3,
                       newsItem.newsText,
@@ -50,7 +50,7 @@ class NewsList extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        "${newsItem.price}",
+                        "${newsItem.price} сом",
                         style: const TextStyle(
                             fontWeight: FontWeight.w600,
                             color: Color(0xff13161B),
@@ -65,7 +65,6 @@ class NewsList extends StatelessWidget {
                       )
                     ],
                   ),
-                  // Image.network(src)
                 ]),
               ),
             );
