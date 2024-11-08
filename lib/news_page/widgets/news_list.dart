@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:naryn_market/classes/news_list_class.dart';
 import 'package:naryn_market/constants/colors.dart';
+import 'package:naryn_market/models/news_model/news_data.dart';
+import 'package:provider/provider.dart';
 
 class NewsList extends StatelessWidget {
   const NewsList({
@@ -11,11 +12,11 @@ class NewsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: Center(
-        child: Wrap(
+      child: Center(child: Consumer<Newsdata>(builder: (context, news, child) {
+        return Wrap(
           spacing: 15.0, // gap between adjacent chips
           runSpacing: 15.0, // gap between lines
-          children: newsList.map((newsItem) {
+          children: news.newsList.map((newsItem) {
             return InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "newsDetailPage");
@@ -31,13 +32,13 @@ class NewsList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(width: 1, color: AppColors.lightGrey)),
                 child: Column(children: [
-                  Image.asset(newsItem.newsImage),
+                  Image.asset(newsItem.imgUrl),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
                       maxLines: 3,
-                      newsItem.newsText,
+                      newsItem.description,
                       style: const TextStyle(
                           fontWeight: FontWeight.w500,
                           color: Color(0xff13161B),
@@ -57,11 +58,16 @@ class NewsList extends StatelessWidget {
                             fontSize: 16,
                             fontFamily: 'NotoSans'),
                       ),
-                      Icon(
-                        newsItem.isFav
-                            ? Icons.favorite
-                            : Icons.favorite_border_outlined,
-                        color: Colors.red,
+                      InkWell(
+                        onTap: () {
+                          news.updateNews(newsItem);
+                        },
+                        child: Icon(
+                          newsItem.isFavorite
+                              ? Icons.favorite
+                              : Icons.favorite_border_outlined,
+                          color: Colors.red,
+                        ),
                       )
                     ],
                   ),
@@ -69,8 +75,8 @@ class NewsList extends StatelessWidget {
               ),
             );
           }).toList(),
-        ),
-      ),
+        );
+      })),
     );
   }
 }

@@ -18,16 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: customLightTheme,
-      // darkTheme: customDarkTheme,
-      // themeMode: ThemeMode.system,
-      // theme: ThemeData(
-      //   appBarTheme: const AppBarTheme(iconTheme: IconThemeData(size: 40)),
-      //   iconTheme: const IconThemeData(color: AppColors.darkBlue, size: 30),
-      //   useMaterial3: true,
-      // ),
       initialRoute: '/',
       routes: {
-        '/': (context) => const MainPage(),
+        '/': (context) => MainPage(),
         'newsPage': (context) => const NewsPage(),
         'menuList': (context) => const MenuList(),
         'newsDetailPage': (context) => const NewsDetailPage(),
