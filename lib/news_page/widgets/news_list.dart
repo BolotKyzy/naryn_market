@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/constants/colors.dart';
+import 'package:naryn_market/constants/text_styles/text_styles.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:provider/provider.dart';
 
@@ -38,26 +39,19 @@ class NewsList extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                      maxLines: 3,
-                      newsItem.description,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff13161B),
-                          fontSize: 14,
-                          fontFamily: 'NotoSans')),
+                    maxLines: 3,
+                    newsItem.description,
+                    style: TextStyles.description,
+                  ),
                   const SizedBox(
-                    height: 20,
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
                         "${newsItem.price} сом",
-                        style: const TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xff13161B),
-                            fontSize: 16,
-                            fontFamily: 'NotoSans'),
+                        style: TextStyles.price,
                       ),
                       InkWell(
                         onTap: () {

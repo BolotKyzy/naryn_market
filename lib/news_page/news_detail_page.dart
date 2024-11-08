@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:naryn_market/constants/colors.dart';
+import 'package:naryn_market/constants/text_styles/text_styles.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:naryn_market/news_page/widgets/image_list_class.dart';
 import 'package:provider/provider.dart';
@@ -36,23 +37,36 @@ class NewsDetailPage extends StatelessWidget {
                   ),
                   Text(
                     selectedNew.category,
-                    style: TextStyle(
-                        fontSize: 12, color: AppColors.blackGreyColor),
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineLarge!
+                        .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
             ),
-            Text("Price ${selectedNew.price} "),
+            Text(
+              "Price ${selectedNew.price} ",
+              style: TextStyles.price,
+            ),
             const SizedBox(height: 30),
-            Text(selectedNew.description,
-                style: TextStyle(color: AppColors.blackGreyColor)),
+            Text(
+              selectedNew.description,
+              style: TextStyles.description,
+            ),
             const SizedBox(height: 30),
             InkWell(
               onTap: () {},
               child: Row(children: [
                 const Icon(Icons.call),
                 const SizedBox(width: 20),
-                Text(selectedNew.phoneNumber)
+                Text(
+                  selectedNew.phoneNumber,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineLarge!
+                      .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+                )
               ]),
             ),
             const SizedBox(height: 20),
@@ -62,7 +76,13 @@ class NewsDetailPage extends StatelessWidget {
                 children: [
                   const Icon(FontAwesomeIcons.whatsapp, color: AppColors.green),
                   const SizedBox(width: 20),
-                  Text(selectedNew.whatsAppNumber)
+                  Text(
+                    selectedNew.whatsAppNumber,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineLarge!
+                        .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             )

@@ -24,7 +24,7 @@ class Newsdata extends ChangeNotifier {
         phoneNumber: '+996990551897',
         whatsAppNumber: '+996990551897',
         date: '07/11/2024',
-        category: 'Скутер, велосипед, коляска'),
+        category: 'Телефондор (Электроника)'),
     News(
         id: 3,
         imgUrl: 'assets/icons/car.jpeg',
@@ -33,7 +33,7 @@ class Newsdata extends ChangeNotifier {
         phoneNumber: '+996990551897',
         whatsAppNumber: '+996990551897',
         date: '10/10/2024',
-        category: 'Скутер, велосипед, коляска'),
+        category: 'Мал чарба'),
   ];
 
   UnmodifiableListView<News> get newsList {
