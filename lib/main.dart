@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: customLightTheme,
       initialRoute: '/',
       routes: {
-        '/': (context) => const MainPage(),
+        '/': (context) => MainPage(),
         'newsPage': (context) => const NewsPage(),
         'menuList': (context) => const MenuList(),
         'newsDetailPage': (context) => const NewsDetailPage(),
