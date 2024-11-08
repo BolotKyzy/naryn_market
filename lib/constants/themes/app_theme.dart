@@ -34,7 +34,7 @@ const lightTextTheme = TextTheme(
     ),
     bodyMedium: TextStyle(
       fontFamily: 'NotoSans',
-      color: AppColors.white,
+      color: AppColors.black,
     ),
     bodySmall: TextStyle(
       color: AppColors.blackGreyColor,
