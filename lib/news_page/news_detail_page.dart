@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:naryn_market/constants/colors.dart';
+import 'package:naryn_market/constants/text_styles/text_styles.dart';
+import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:naryn_market/news_page/widgets/image_list_class.dart';
+import 'package:provider/provider.dart';
 
 class NewsDetailPage extends StatelessWidget {
   const NewsDetailPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final int index = ModalRoute.of(context)?.settings.arguments as int;
+    final selectedNew = Provider.of<Newsdata>(context, listen: false)
+        .newsList
+        .firstWhere((element) => element.id == index);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Скутер, велосипед, коляска"),
+        title: Text(selectedNew.category),
         backgroundColor: AppColors.blue20,
       ),
       body: Padding(
@@ -18,45 +25,64 @@ class NewsDetailPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 200, child: ImageSliderScreen()),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "30/10/2024",
+                    selectedNew.date,
                     style: TextStyle(
                         fontSize: 12, color: AppColors.blackGreyColor),
                   ),
                   Text(
-                    "Скутер, велосипед, коляска",
-                    style: TextStyle(
-                        fontSize: 12, color: AppColors.blackGreyColor),
+                    selectedNew.category,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineLarge!
+                        .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
             ),
-            const Text("Price 130000 "),
+            Text(
+              "Price ${selectedNew.price} ",
+              style: TextStyles.price,
+            ),
             const SizedBox(height: 30),
-            const Text("Сатылат жаны масло алганыма 1 жума боло элек",
-                style: TextStyle(color: AppColors.blackGreyColor)),
+            Text(
+              selectedNew.description,
+              style: TextStyles.description,
+            ),
             const SizedBox(height: 30),
             InkWell(
               onTap: () {},
-              child: const Row(children: [
-                Icon(Icons.call),
-                SizedBox(width: 20),
-                Text("0551110694")
+              child: Row(children: [
+                const Icon(Icons.call),
+                const SizedBox(width: 20),
+                Text(
+                  selectedNew.phoneNumber,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineLarge!
+                      .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+                )
               ]),
             ),
             const SizedBox(height: 20),
             InkWell(
               onTap: () {},
-              child: const Row(
+              child: Row(
                 children: [
-                  Icon(FontAwesomeIcons.whatsapp, color: AppColors.green),
-                  SizedBox(width: 20),
-                  Text("0551110694")
+                  const Icon(FontAwesomeIcons.whatsapp, color: AppColors.green),
+                  const SizedBox(width: 20),
+                  Text(
+                    selectedNew.whatsAppNumber,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headlineLarge!
+                        .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+                  )
                 ],
               ),
             )
