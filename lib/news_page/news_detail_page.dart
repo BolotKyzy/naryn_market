@@ -60,13 +60,7 @@ class NewsDetailPage extends StatelessWidget {
               child: Row(children: [
                 const Icon(Icons.call),
                 const SizedBox(width: 20),
-                Text(
-                  selectedNew.phoneNumber,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineLarge!
-                      .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
-                )
+                Text(selectedNew.phoneNumber, style: TextStyles.phone)
               ]),
             ),
             const SizedBox(height: 20),
@@ -76,13 +70,7 @@ class NewsDetailPage extends StatelessWidget {
                 children: [
                   const Icon(FontAwesomeIcons.whatsapp, color: AppColors.green),
                   const SizedBox(width: 20),
-                  Text(
-                    selectedNew.whatsAppNumber,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
-                  )
+                  Text(selectedNew.whatsAppNumber, style: TextStyles.phone)
                 ],
               ),
             )

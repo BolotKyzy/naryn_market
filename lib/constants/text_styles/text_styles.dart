@@ -13,4 +13,16 @@ class TextStyles {
       fontFamily: 'NotoSans',
       fontSize: 18,
       fontWeight: FontWeight.w700);
+
+  static const phone = TextStyle(
+      color: AppColors.black,
+      fontSize: 16,
+      fontFamily: "NotoSans",
+      fontWeight: FontWeight.w500);
+
+  static const menu = TextStyle(
+      color: AppColors.black,
+      fontSize: 12,
+      fontFamily: 'NotoSans',
+      fontWeight: FontWeight.w500);
 }
