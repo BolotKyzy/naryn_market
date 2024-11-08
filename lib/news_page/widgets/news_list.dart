@@ -19,7 +19,8 @@ class NewsList extends StatelessWidget {
           children: news.newsList.map((newsItem) {
             return InkWell(
               onTap: () {
-                Navigator.pushNamed(context, "newsDetailPage");
+                Navigator.pushNamed(context, "newsDetailPage",
+                    arguments: newsItem.id);
               },
               child: Container(
                 padding:

@@ -6,6 +6,7 @@ import 'package:naryn_market/models/news_model/news.dart';
 class Newsdata extends ChangeNotifier {
   List<News> _newsList = [
     News(
+        id: 1,
         isFavorite: true,
         imgUrl: 'assets/icons/car.jpeg',
         description:
@@ -16,6 +17,7 @@ class Newsdata extends ChangeNotifier {
         date: '30/10/2024',
         category: 'Скутер, велосипед, коляска'),
     News(
+        id: 2,
         imgUrl: 'assets/icons/car.jpeg',
         description: 'Redmi Not 11 сатылат срочно!',
         price: 154000,
@@ -24,6 +26,7 @@ class Newsdata extends ChangeNotifier {
         date: '30/10/2024',
         category: 'Скутер, велосипед, коляска'),
     News(
+        id: 3,
         imgUrl: 'assets/icons/car.jpeg',
         description: 'Чон уй букасы менен сатылат',
         price: 154000,

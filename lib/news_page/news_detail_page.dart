@@ -8,6 +8,8 @@ class NewsDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int id = ModalRoute.of(context)?.settings.arguments as int;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Скутер, велосипед, коляска"),
@@ -18,13 +20,13 @@ class NewsDetailPage extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 200, child: ImageSliderScreen()),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "30/10/2024",
+                    "$id",
                     style: TextStyle(
                         fontSize: 12, color: AppColors.blackGreyColor),
                   ),

@@ -1,5 +1,5 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 class News {
+  final int id;
   final String description;
   final double price;
   bool isFavorite;
@@ -10,6 +10,7 @@ class News {
   final String category;
 
   News({
+    required this.id,
     required this.description,
     required this.price,
     this.isFavorite = false,
