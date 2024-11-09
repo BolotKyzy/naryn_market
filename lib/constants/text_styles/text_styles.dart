@@ -22,7 +22,7 @@ class TextStyles {
 
   static const menu = TextStyle(
       color: AppColors.black,
-      fontSize: 12,
+      fontSize: 11,
       fontFamily: 'NotoSans',
-      fontWeight: FontWeight.w500);
+      fontWeight: FontWeight.w700);
 }

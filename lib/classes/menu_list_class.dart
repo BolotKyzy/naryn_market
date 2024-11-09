@@ -8,13 +8,16 @@ class MenuListClass {
 }
 
 List<MenuListClass> menuList = [
+  MenuListClass(const Icon(Icons.newspaper_outlined),
+      const Text("Баардык жарнамалар"), () {}),
   MenuListClass(
-      Icon(Icons.newspaper_outlined), Text("Баардык жарнамалар"), () {}),
-  MenuListClass(Icon(Icons.widgets_outlined), Text("Болумдор"), () {}),
-  MenuListClass(Icon(Icons.compare_outlined), Text("Жарнама беруу"), () {}),
+      const Icon(Icons.widgets_outlined), const Text("Болумдор"), () {}),
   MenuListClass(
-      Icon(Icons.edit_notifications_outlined), Text("Конгуро"), () {}),
-  MenuListClass(Icon(Icons.share), Text("Тиркемени болушуу"), () {}),
+      const Icon(Icons.compare_outlined), const Text("Жарнама беруу"), () {}),
+  MenuListClass(const Icon(Icons.edit_notifications_outlined),
+      const Text("Конгуро"), () {}),
   MenuListClass(
-      Icon(Icons.download_outlined), Text("Тиркемени жаныртуу"), () {}),
+      const Icon(Icons.share), const Text("Тиркемени болушуу"), () {}),
+  MenuListClass(const Icon(Icons.download_outlined),
+      const Text("Тиркемени жаныртуу"), () {}),
 ];
