@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/constants/app_bar.dart';
 import 'package:naryn_market/constants/colors.dart';
-import 'package:naryn_market/menu_page.dart';
+import 'package:naryn_market/pages/categories_page/categories_page.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
-import 'package:naryn_market/news_page/news.dart';
-import 'package:naryn_market/insert_section/news_insert_page.dart';
+import 'package:naryn_market/pages/news_page/news_page.dart';
+import 'package:naryn_market/pages/news_insert_page/news_insert_page.dart';
 import 'package:provider/provider.dart';
 
-class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+class InitPage extends StatefulWidget {
+  const InitPage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  State<InitPage> createState() => _InitPageState();
 }
 
-class _MainPageState extends State<MainPage> {
+class _InitPageState extends State<InitPage> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
           child: NewsPage(),
         ),
         NewsInsertPage(),
-        MenuPage()
+        CategoriesPage()
       ]),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
