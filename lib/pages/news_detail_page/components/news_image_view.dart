@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:naryn_market/constants/colors.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -33,7 +34,9 @@ class _NewsImageViewState extends State<NewsImageView> {
     return Column(children: [
       CarouselSlider(
         carouselController: buttonCarouselController,
-        items: imgList.map((e) => Image.network(e)).toList(),
+        items: showGallery(imgList),
+        // items: imgList.map(
+        //ite(e) => Image.network(e)).toList(),
         options: CarouselOptions(
           initialPage: 0,
           height: 304.0,
@@ -86,26 +89,6 @@ class _NewsImageViewState extends State<NewsImageView> {
                       ),
                     ),
                   );
-                  // return ProductImagePreview(
-                  //   url: widget.images[index].image.productSmall!,
-                  //   callback: () {
-                  // buttonCarouselController
-                  //     .jumpToPage((10 - 1) + (index + 1));
-                  //   },
-                  //   decoration: ((10 - 1) + (index + 1) !=
-                  //       currentSelectedImage),
-                  //   index: index,
-                  //   currentSelectedImage: currentSelectedImage,
-                  //   video: false,
-                  // );
-                  // return Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: Container(
-                  //     width: 100,
-                  //     height: 100,
-                  //     color: AppColors.blue,
-                  //   ),
-                  // );
                 }),
               ),
             ),
@@ -125,12 +108,10 @@ class _NewsImageViewState extends State<NewsImageView> {
                 });
               },
               child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Icon(
-                    Icons.arrow_left_outlined,
-                    color: AppColors.red,
-                    size: 50,
-                  )),
+                padding: const EdgeInsets.all(10.0),
+                child: SvgPicture.asset('assets/icons/left_arrow.svg',
+                    width: 12.0, semanticsLabel: 'Next'),
+              ),
             ),
           ),
           Positioned(
@@ -149,11 +130,8 @@ class _NewsImageViewState extends State<NewsImageView> {
               },
               child: Container(
                 padding: const EdgeInsets.all(10.0),
-                child: Icon(
-                  Icons.arrow_right,
-                  color: AppColors.red,
-                  size: 50,
-                ),
+                child: SvgPicture.asset('assets/icons/right_arrow.svg',
+                    width: 12.0, semanticsLabel: 'Next'),
               ),
             ),
           ),
@@ -168,29 +146,18 @@ class _NewsImageViewState extends State<NewsImageView> {
     List<Widget> items = [];
 
     for (int i = 0; i < images.length; i++) {
-      items.add(InkWell(
-        onTap: () {
-          // Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: (context) =>
-          //           ProductImagePage(item: i++, images: images, videos: videos),
-          //     ));
-        },
-        child: PhotoView(
-          backgroundDecoration:
-              BoxDecoration(color: Theme.of(context).cardColor),
-          imageProvider: NetworkImage(images[i].image.productGallery!),
-          loadingBuilder: (context, ImageChunkEvent? event) => Center(
-            child: SizedBox(
-              width: 45.0,
-              height: 45.0,
-              child: CircularProgressIndicator(
-                backgroundColor: const Color(0xFFFFB900),
-                value: event == null
-                    ? 0
-                    : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
-              ),
+      items.add(PhotoView(
+        backgroundDecoration: BoxDecoration(color: Theme.of(context).cardColor),
+        imageProvider: NetworkImage(images[i]),
+        loadingBuilder: (context, ImageChunkEvent? event) => Center(
+          child: SizedBox(
+            width: 45.0,
+            height: 45.0,
+            child: CircularProgressIndicator(
+              backgroundColor: const Color(0xFFFFB900),
+              value: event == null
+                  ? 0
+                  : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
             ),
           ),
         ),
