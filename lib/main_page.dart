@@ -4,7 +4,7 @@ import 'package:naryn_market/constants/colors.dart';
 import 'package:naryn_market/menu_page.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:naryn_market/news_page/news.dart';
-import 'package:naryn_market/news_insert_page.dart';
+import 'package:naryn_market/insert_section/news_insert_page.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
