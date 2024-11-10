@@ -44,21 +44,4 @@ class Newsdata extends ChangeNotifier {
     news.toggleFavorite();
     notifyListeners();
   }
-
-  // News selectedNews = News(
-  //     id: 99,
-  //     isFavorite: true,
-  //     imgUrl: 'assets/icons/car.jpeg',
-  //     description:
-  //         'Levelo Morphix Gripstand PU Leather Case - iPhone 14 Pro Max - Black',
-  //     price: 154000,
-  //     phoneNumber: '+996990551897',
-  //     whatsAppNumber: '+996990551897',
-  //     date: '99/10/2024',
-  //     category: 'Скутер, велосипед, коляска');
-
-  // void updatedSelectedNews(int id) {
-  //   selectedNews = _newsList.
-  //   notifyListeners();
-  // }
 }

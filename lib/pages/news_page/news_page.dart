@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naryn_market/news_page/widgets/news_list.dart';
+import 'package:naryn_market/pages/news_page/widgets/news_list.dart';
 
 class NewsPage extends StatelessWidget {
   const NewsPage({super.key});

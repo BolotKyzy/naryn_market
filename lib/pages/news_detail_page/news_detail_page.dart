@@ -3,7 +3,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:naryn_market/constants/colors.dart';
 import 'package:naryn_market/constants/text_styles/text_styles.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
-import 'package:naryn_market/news_page/widgets/image_list_class.dart';
 import 'package:provider/provider.dart';
 
 class NewsDetailPage extends StatelessWidget {
@@ -24,7 +23,7 @@ class NewsDetailPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            SizedBox(height: 200, child: ImageSliderScreen()),
+            SizedBox(height: 200, child: Text("Imagess")),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(

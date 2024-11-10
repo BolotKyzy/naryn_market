@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/classes/menu_list_class.dart';
 
-class MenuList extends StatelessWidget {
-  const MenuList({super.key});
+class TopSectionsPage extends StatelessWidget {
+  const TopSectionsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

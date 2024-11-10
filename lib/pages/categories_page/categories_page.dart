@@ -24,8 +24,8 @@ List<Map> categoriesList = [
   {"title": "Спорт буюмрары", "icon": Icons.sports_soccer},
 ];
 
-class MenuPage extends StatelessWidget {
-  const MenuPage({super.key});
+class CategoriesPage extends StatelessWidget {
+  const CategoriesPage({super.key});
 
   @override
   Widget build(BuildContext context) {
