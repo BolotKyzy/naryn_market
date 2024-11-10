@@ -2,12 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:naryn_market/constants/colors.dart';
-import 'package:naryn_market/pages/news_detail_page/components/news_image_view.dart';
 import 'package:photo_view/photo_view.dart';
 
 class ZoomedImagePage extends StatefulWidget {
-  const ZoomedImagePage({super.key, required this.item});
+  const ZoomedImagePage({super.key, required this.item, required this.images});
   final int item;
+  final List images;
 
   @override
   State<ZoomedImagePage> createState() => _ZoomedImagePageState();
@@ -28,7 +28,7 @@ class _ZoomedImagePageState extends State<ZoomedImagePage> {
     return Scaffold(
       backgroundColor: AppColors.lightBlack,
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -60,7 +60,7 @@ class _ZoomedImagePageState extends State<ZoomedImagePage> {
                   },
                 ),
                 items: showGalleryZoomedPage(
-                  imgList,
+                  widget.images,
                 ),
               ),
               Stack(
@@ -91,7 +91,8 @@ class _ZoomedImagePageState extends State<ZoomedImagePage> {
                       child: Row(
                         children: [
                           Row(
-                            children: List.generate(imgList.length, (index) {
+                            children:
+                                List.generate(widget.images.length, (index) {
                               return InkWell(
                                 onTap: () {
                                   buttonCarouselController.jumpToPage(index);
@@ -116,7 +117,7 @@ class _ZoomedImagePageState extends State<ZoomedImagePage> {
                                   child: Stack(
                                     children: [
                                       Image.network(
-                                        "${imgList[index]}",
+                                        "${widget.images[index]}",
                                         fit: BoxFit.cover,
                                         height: 50,
                                         width: 50,
@@ -159,18 +160,10 @@ class _ZoomedImagePageState extends State<ZoomedImagePage> {
 
   List<Widget> showGalleryZoomedPage(List images) {
     List<Widget> items = [];
-    // chewieController = ChewieController(
-    //     videoPlayerController: videoPlayerController,
-    //     deviceOrientationsOnEnterFullScreen: [DeviceOrientation.portraitUp],
-    //     aspectRatio: 16 / 9,
-    //     autoPlay: playVideo,
-    //     looping: true,
-    //     autoInitialize: true);
-
     for (int i = 0; i < images.length; i++) {
       items.add(PhotoView(
         backgroundDecoration: BoxDecoration(color: Theme.of(context).cardColor),
-        imageProvider: NetworkImage(images[i].image.productGallery!),
+        imageProvider: NetworkImage(images[i]),
         loadingBuilder: (context, ImageChunkEvent? event) => Center(
           child: SizedBox(
             width: 45.0,

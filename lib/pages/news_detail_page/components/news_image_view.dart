@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:naryn_market/constants/colors.dart';
+import 'package:naryn_market/pages/news_detail_page/components/zoomed_image_page.dart';
 import 'package:photo_view/photo_view.dart';
 
 List<String> imgList = [
@@ -35,8 +36,6 @@ class _NewsImageViewState extends State<NewsImageView> {
       CarouselSlider(
         carouselController: buttonCarouselController,
         items: showGallery(imgList),
-        // items: imgList.map(
-        //ite(e) => Image.network(e)).toList(),
         options: CarouselOptions(
           initialPage: 0,
           height: 304.0,
@@ -146,18 +145,29 @@ class _NewsImageViewState extends State<NewsImageView> {
     List<Widget> items = [];
 
     for (int i = 0; i < images.length; i++) {
-      items.add(PhotoView(
-        backgroundDecoration: BoxDecoration(color: Theme.of(context).cardColor),
-        imageProvider: NetworkImage(images[i]),
-        loadingBuilder: (context, ImageChunkEvent? event) => Center(
-          child: SizedBox(
-            width: 45.0,
-            height: 45.0,
-            child: CircularProgressIndicator(
-              backgroundColor: const Color(0xFFFFB900),
-              value: event == null
-                  ? 0
-                  : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
+      items.add(InkWell(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    ZoomedImagePage(item: i++, images: images),
+              ));
+        },
+        child: PhotoView(
+          backgroundDecoration:
+              BoxDecoration(color: Theme.of(context).cardColor),
+          imageProvider: NetworkImage(images[i]),
+          loadingBuilder: (context, ImageChunkEvent? event) => Center(
+            child: SizedBox(
+              width: 45.0,
+              height: 45.0,
+              child: CircularProgressIndicator(
+                backgroundColor: const Color(0xFFFFB900),
+                value: event == null
+                    ? 0
+                    : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
+              ),
             ),
           ),
         ),
