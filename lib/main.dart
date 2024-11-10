@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/constants/themes/app_theme.dart';
 import 'package:naryn_market/main_page.dart';
-import 'package:naryn_market/menu_page.dart';
 import 'package:naryn_market/menu_section/menu_list_page.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:naryn_market/news_page/news.dart';

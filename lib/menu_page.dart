@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/constants/colors.dart';
+import 'package:naryn_market/constants/text_styles/text_styles.dart';
 
 List<Map> categoriesList = [
   {"title": "Нарын кабарлар", "icon": Icons.campaign},
@@ -64,13 +65,7 @@ class MenuPage extends StatelessWidget {
                                           child: Text(
                                               categoriesList[index]["title"],
                                               textAlign: TextAlign.center,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .labelMedium!
-                                                  .copyWith(
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w400)),
+                                              style: TextStyles.menu),
                                         ),
                                       ]),
                                 ),
