@@ -24,40 +24,62 @@ class NewsDetailPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Text(
+                selectedNew.date,
+                style: TextStyles.newsDetailDate,
+              ),
+            ),
             NewsImageView(),
-            Padding(
-              padding: EdgeInsets.all(8.0),
+            const SizedBox(
+              height: 15,
+            ),
+            Text(
+              selectedNew.description,
+              style: TextStyles.newsDetailDesc,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    selectedNew.date,
-                    style: TextStyle(
-                        fontSize: 12, color: AppColors.blackGreyColor),
+                  Expanded(child: Container()),
+                  const Text(
+                    'Баасы: ',
+                    style: TextStyle(fontSize: 18, fontFamily: "NotoSans"),
                   ),
-                  Text(
-                    selectedNew.category,
-                    style: Theme.of(context)
-                        .textTheme
-                        .headlineLarge!
-                        .copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+                  Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.blue),
+                        borderRadius: BorderRadius.circular(8)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RichText(
+                        text: TextSpan(
+                            text: " ${selectedNew.price}",
+                            style: TextStyles.newsDetailPrice,
+                            children: const [
+                              TextSpan(
+                                  text: ' сом',
+                                  style: TextStyle(
+                                      fontSize: 18,
+                                      fontFamily: "NotoSans",
+                                      fontWeight: FontWeight.normal))
+                            ]),
+                      ),
+                    ),
                   ),
                 ],
               ),
-            ),
-            Text(
-              "Price ${selectedNew.price} ",
-              style: TextStyles.price,
-            ),
-            const SizedBox(height: 30),
-            Text(
-              selectedNew.description,
-              style: TextStyles.description,
             ),
             const SizedBox(height: 30),
             InkWell(
               onTap: () {},
               child: Row(children: [
+                Expanded(child: Container()),
                 const Icon(Icons.call),
                 const SizedBox(width: 20),
                 Text(selectedNew.phoneNumber, style: TextStyles.phone)
@@ -68,6 +90,7 @@ class NewsDetailPage extends StatelessWidget {
               onTap: () {},
               child: Row(
                 children: [
+                  Expanded(child: Container()),
                   const Icon(FontAwesomeIcons.whatsapp, color: AppColors.green),
                   const SizedBox(width: 20),
                   Text(selectedNew.whatsAppNumber, style: TextStyles.phone)
