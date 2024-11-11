@@ -49,7 +49,7 @@ class _InitPageState extends State<InitPage> {
             icon: Icon(
               Icons.add_circle,
               size: 40,
-              color: Colors.red,
+              color: AppColors.blue,
             ),
             label: 'Жарнама беруу',
           ),
@@ -59,13 +59,18 @@ class _InitPageState extends State<InitPage> {
               size: 40,
               color: AppColors.blue,
             ),
-            label: 'Меню',
+            label: 'Болумдор',
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: AppColors.orange,
-        unselectedLabelStyle: TextStyle(fontFamily: 'NotoSans'),
-        selectedLabelStyle: TextStyle(fontFamily: 'NotoSans'),
+        selectedItemColor: AppColors.darkBlue,
+        unselectedLabelStyle: const TextStyle(
+            fontFamily: 'NotoSans',
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: AppColors.lightBlack),
+        selectedLabelStyle: const TextStyle(
+            fontFamily: 'NotoSans', fontSize: 16, fontWeight: FontWeight.w600),
         onTap: _onItemTapped,
       ),
     );

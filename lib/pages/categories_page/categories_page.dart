@@ -57,7 +57,7 @@ class CategoriesPage extends StatelessWidget {
                                       children: [
                                         Icon(
                                           categoriesList[index]["icon"],
-                                          size: 30,
+                                          size: 20,
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(

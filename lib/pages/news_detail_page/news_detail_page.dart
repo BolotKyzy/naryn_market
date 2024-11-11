@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:naryn_market/constants/colors.dart';
 import 'package:naryn_market/constants/text_styles/text_styles.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
+import 'package:naryn_market/pages/news_detail_page/components/contacts.dart';
 import 'package:naryn_market/pages/news_detail_page/components/news_image_view.dart';
 import 'package:provider/provider.dart';
 
@@ -76,29 +76,9 @@ class NewsDetailPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 30),
-              InkWell(
-                onTap: () {},
-                child: Row(children: [
-                  Expanded(child: Container()),
-                  const Icon(Icons.call),
-                  const SizedBox(width: 20),
-                  Text(selectedNew.phoneNumber, style: TextStyles.phone)
-                ]),
-              ),
-              const SizedBox(height: 20),
-              InkWell(
-                onTap: () {},
-                child: Row(
-                  children: [
-                    Expanded(child: Container()),
-                    const Icon(FontAwesomeIcons.whatsapp,
-                        color: AppColors.green),
-                    const SizedBox(width: 20),
-                    Text(selectedNew.whatsAppNumber, style: TextStyles.phone)
-                  ],
-                ),
-              )
+              NewsDetailsContacts(
+                  phoneNumber: selectedNew.phoneNumber,
+                  whatsappNumber: selectedNew.whatsAppNumber)
             ],
           ),
         ),
