@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naryn_market/constants/text_styles/text_styles.dart';
 
 class MenuListClass {
   const MenuListClass(this.menuIcon, this.menuText, this.onTap);
@@ -8,16 +9,39 @@ class MenuListClass {
 }
 
 List<MenuListClass> menuList = [
-  MenuListClass(const Icon(Icons.newspaper_outlined),
-      const Text("Баардык жарнамалар"), () {}),
   MenuListClass(
-      const Icon(Icons.widgets_outlined), const Text("Болумдор"), () {}),
+      const Icon(Icons.turned_in_not),
+      const Text(
+        "Тандалгандар",
+        style: TextStyles.topSections,
+      ),
+      () {}),
   MenuListClass(
-      const Icon(Icons.compare_outlined), const Text("Жарнама беруу"), () {}),
-  MenuListClass(const Icon(Icons.edit_notifications_outlined),
-      const Text("Конгуро"), () {}),
+      const Icon(Icons.add_card),
+      const Text(
+        "Менин жарнамаларым",
+        style: TextStyles.topSections,
+      ),
+      () {}),
   MenuListClass(
-      const Icon(Icons.share), const Text("Тиркемени болушуу"), () {}),
-  MenuListClass(const Icon(Icons.download_outlined),
-      const Text("Тиркемени жаныртуу"), () {}),
+      const Icon(Icons.edit_notifications_outlined),
+      const Text(
+        "Конгуро",
+        style: TextStyles.topSections,
+      ),
+      () {}),
+  MenuListClass(
+      const Icon(Icons.share),
+      const Text(
+        "Тиркемени болушуу",
+        style: TextStyles.topSections,
+      ),
+      () {}),
+  MenuListClass(
+      const Icon(Icons.download_outlined),
+      const Text(
+        "Тиркемени жаныртуу",
+        style: TextStyles.topSections,
+      ),
+      () {}),
 ];

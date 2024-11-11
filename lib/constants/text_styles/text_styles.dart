@@ -31,10 +31,15 @@ class TextStyles {
       fontWeight: FontWeight.w500);
 
   static const menu = TextStyle(
-      color: AppColors.black,
+      color: AppColors.lightBlack,
       fontSize: 11,
       fontFamily: 'NotoSans',
-      fontWeight: FontWeight.w700);
+      fontWeight: FontWeight.w500);
+  static const topSections = TextStyle(
+      fontSize: 16,
+      fontFamily: 'NotoSans',
+      fontWeight: FontWeight.w500,
+      color: AppColors.lightBlack);
 
   static const newsDetailDate = TextStyle(
       color: AppColors.lightBlack, fontFamily: 'NotoSans', fontSize: 14);
