@@ -4,8 +4,8 @@ import 'package:naryn_market/constants/text_styles/text_styles.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:provider/provider.dart';
 
-class NewsList extends StatelessWidget {
-  const NewsList({
+class FavList extends StatelessWidget {
+  const FavList({
     super.key,
   });
 
@@ -14,14 +14,17 @@ class NewsList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Center(child: Consumer<Newsdata>(builder: (context, news, child) {
+        final List favList =
+            news.newsList.where((element) => element.isFavorite).toList();
+
         return Wrap(
           spacing: 15.0, // gap between adjacent chips
           runSpacing: 15.0, // gap between lines
-          children: news.newsList.map((newsItem) {
+          children: favList.map((favItem) {
             return InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "newsDetailPage",
-                    arguments: newsItem.id);
+                    arguments: favItem.id);
               },
               child: Container(
                 padding:
@@ -34,13 +37,13 @@ class NewsList extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(width: 1, color: AppColors.lightGrey)),
                 child: Column(children: [
-                  Image.asset(newsItem.imgUrl),
+                  Image.asset(favItem.imgUrl),
                   const SizedBox(
                     height: 10,
                   ),
                   Text(
+                    favItem.description,
                     maxLines: 3,
-                    newsItem.description,
                     style: TextStyles.description,
                   ),
                   const SizedBox(
@@ -50,15 +53,15 @@ class NewsList extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        "${newsItem.price} сом",
+                        "${favItem.price} сом",
                         style: TextStyles.price,
                       ),
                       InkWell(
                         onTap: () {
-                          news.addToFavList(newsItem);
+                          news.addToFavList(favItem);
                         },
                         child: Icon(
-                          newsItem.isFavorite
+                          favItem.isFavorite
                               ? Icons.favorite
                               : Icons.favorite_border_outlined,
                           color: Colors.red,

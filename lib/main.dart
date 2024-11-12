@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/constants/themes/app_theme.dart';
 import 'package:naryn_market/init_page.dart';
+import 'package:naryn_market/pages/favorite_page/favorite_page.dart';
 import 'package:naryn_market/pages/top_sections/top_sections.dart';
 import 'package:naryn_market/models/news_model/news_data.dart';
 import 'package:naryn_market/pages/news_detail_page/news_detail_page.dart';
@@ -25,6 +26,10 @@ class MyApp extends StatelessWidget {
         'newsDetailPage': (context) => ChangeNotifierProvider<Newsdata>(
               create: (_) => Newsdata(),
               child: const NewsDetailPage(),
+            ),
+        'favorites': (context) => ChangeNotifierProvider<Newsdata>(
+              create: (_) => Newsdata(),
+              child: const FavoritePage(),
             ),
       },
     );

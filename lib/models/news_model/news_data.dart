@@ -17,6 +17,7 @@ class Newsdata extends ChangeNotifier {
         date: '08/11/2024',
         category: 'Скутер, велосипед, коляска'),
     News(
+        isFavorite: true,
         id: 2,
         imgUrl: 'assets/icons/car.jpeg',
         description: 'Redmi Not 11 сатылат срочно!',
@@ -26,6 +27,7 @@ class Newsdata extends ChangeNotifier {
         date: '07/11/2024',
         category: 'Телефондор (Электроника)'),
     News(
+        isFavorite: true,
         id: 3,
         imgUrl: 'assets/icons/car.jpeg',
         description: 'Чон уй букасы менен сатылат',
@@ -40,7 +42,7 @@ class Newsdata extends ChangeNotifier {
     return UnmodifiableListView(_newsList);
   }
 
-  void updateNews(News news) {
+  void addToFavList(News news) {
     news.toggleFavorite();
     notifyListeners();
   }

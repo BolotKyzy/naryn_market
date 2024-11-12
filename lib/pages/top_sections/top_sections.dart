@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naryn_market/classes/menu_list_class.dart';
+import 'package:naryn_market/constants/text_styles/text_styles.dart';
 
 class TopSectionsPage extends StatelessWidget {
   const TopSectionsPage({super.key});
@@ -15,16 +16,21 @@ class TopSectionsPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          children: menuList.map((menuItem) {
+          children: AppConstants.getDefaultMenuItems().map((menuItem) {
             return Padding(
               padding: const EdgeInsets.all(10),
               child: InkWell(
-                onTap: menuItem.onTap,
+                onTap: () {
+                  menuItem['action'](context);
+                },
                 child: Row(
                   children: [
-                    menuItem.menuIcon,
+                    menuItem["icon"],
                     const SizedBox(width: 20),
-                    menuItem.menuText,
+                    Text(
+                      menuItem["title"],
+                      style: TextStyles.topSections,
+                    ),
                     const Expanded(child: SizedBox()),
                     const Icon(
                       Icons.arrow_forward_ios,
