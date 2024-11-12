@@ -14,10 +14,13 @@ class FavList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Center(child: Consumer<Newsdata>(builder: (context, news, child) {
+        final List favList =
+            news.newsList.where((element) => element.isFavorite).toList();
+
         return Wrap(
           spacing: 15.0, // gap between adjacent chips
           runSpacing: 15.0, // gap between lines
-          children: news.favList.map((favItem) {
+          children: favList.map((favItem) {
             return InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "newsDetailPage",
@@ -39,8 +42,8 @@ class FavList extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    maxLines: 3,
                     favItem.description,
+                    maxLines: 3,
                     style: TextStyles.description,
                   ),
                   const SizedBox(
@@ -55,7 +58,7 @@ class FavList extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          news.updateNews(favItem);
+                          news.addToFavList(favItem);
                         },
                         child: Icon(
                           favItem.isFavorite

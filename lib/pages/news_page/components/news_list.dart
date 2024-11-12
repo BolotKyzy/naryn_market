@@ -55,7 +55,7 @@ class NewsList extends StatelessWidget {
                       ),
                       InkWell(
                         onTap: () {
-                          news.updateNews(newsItem);
+                          news.addToFavList(newsItem);
                         },
                         child: Icon(
                           newsItem.isFavorite
