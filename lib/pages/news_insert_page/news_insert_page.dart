@@ -22,125 +22,127 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text("Суроттор", style: TextStyles.description),
-          Text("Жарыяныздын суроту болсо, томонго жуктонуз"),
-          StaggeredGrid.count(
-            crossAxisCount: 4,
-            mainAxisSpacing: 4,
-            crossAxisSpacing: 4,
-            children: [
-              StaggeredGridTile.count(
-                crossAxisCellCount: 2,
-                mainAxisCellCount: 2,
-                child: Container(
-                  child: Icon(Icons.add),
-                  color: AppColors.cartGreyColor,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text("Суроттор", style: TextStyles.description),
+            Text("Жарыяныздын суроту болсо, томонго жуктонуз"),
+            StaggeredGrid.count(
+              crossAxisCount: 4,
+              mainAxisSpacing: 4,
+              crossAxisSpacing: 4,
+              children: [
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 2,
+                  mainAxisCellCount: 2,
+                  child: Container(
+                    child: Icon(Icons.add),
+                    color: AppColors.cartGreyColor,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: Container(
+                    child: Icon(Icons.add),
+                    color: AppColors.cartGreyColor,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: Container(
+                    child: Icon(Icons.add),
+                    color: AppColors.cartGreyColor,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: Container(
+                    child: Icon(Icons.add),
+                    color: AppColors.cartGreyColor,
+                  ),
+                ),
+                StaggeredGridTile.count(
+                  crossAxisCellCount: 1,
+                  mainAxisCellCount: 1,
+                  child: Container(
+                    child: Icon(Icons.add),
+                    color: AppColors.cartGreyColor,
+                  ),
+                ),
+              ], // End off grid
+            ),
+            Text(
+              "Муноздомо",
+              style: TextStyles.description,
+            ),
+            TextField(
+              maxLength: 300,
+              onChanged: (context) {},
+              maxLines: 4,
+              decoration: InputDecoration(hintText: "Бул жерге жазыныз"),
+            ),
+            Text(
+              "Категориялар",
+              style: TextStyles.description,
+            ),
+            Container(
+              height: 50,
+              width: 400,
+              color: AppColors.starGrey,
+              child: DropdownButton<String>(
+                value: selectedCategory,
+                hint: Text("Категория танданыз"),
+                borderRadius: BorderRadius.circular(40),
+                items: categoryTitles.map((String title) {
+                  return DropdownMenuItem<String>(
+                    value: title,
+                    child: Text(title),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    selectedCategory = newValue;
+                  });
+                },
+              ),
+            ),
+            Text(
+              "Телефон номеринизди жазыныз",
+              style: TextStyles.description,
+            ),
+            IntlPhoneField(
+              decoration: InputDecoration(
+                labelText: 'Телефон номер',
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(),
                 ),
               ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Container(
-                  child: Icon(Icons.add),
-                  color: AppColors.cartGreyColor,
-                ),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Container(
-                  child: Icon(Icons.add),
-                  color: AppColors.cartGreyColor,
-                ),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Container(
-                  child: Icon(Icons.add),
-                  color: AppColors.cartGreyColor,
-                ),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: Container(
-                  child: Icon(Icons.add),
-                  color: AppColors.cartGreyColor,
-                ),
-              ),
-            ], // End off grid
-          ),
-          Text(
-            "Муноздомо",
-            style: TextStyles.description,
-          ),
-          TextField(
-            maxLength: 300,
-            onChanged: (context) {},
-            maxLines: 4,
-            decoration: InputDecoration(hintText: "Бул жерге жазыныз"),
-          ),
-          Text(
-            "Категориялар",
-            style: TextStyles.description,
-          ),
-          Container(
-            height: 50,
-            width: 400,
-            color: AppColors.starGrey,
-            child: DropdownButton<String>(
-              value: selectedCategory,
-              hint: Text("Категория танданыз"),
-              borderRadius: BorderRadius.circular(40),
-              items: categoryTitles.map((String title) {
-                return DropdownMenuItem<String>(
-                  value: title,
-                  child: Text(title),
-                );
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  selectedCategory = newValue;
-                });
+              initialCountryCode: 'KG',
+              onChanged: (phone) {
+                print(phone.completeNumber);
               },
             ),
-          ),
-          Text(
-            "Телефон номеринизди жазыныз",
-            style: TextStyles.description,
-          ),
-          IntlPhoneField(
-            decoration: InputDecoration(
-              labelText: 'Телефон номер',
-              border: OutlineInputBorder(
-                borderSide: BorderSide(),
+            Text("What's app номер жазыныз", style: TextStyles.description),
+            IntlPhoneField(
+              decoration: InputDecoration(
+                labelText: 'What\'s app номер жвзыныз',
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(),
+                ),
               ),
+              initialCountryCode: 'KG',
+              onChanged: (phone) {
+                print(phone.completeNumber);
+              },
             ),
-            initialCountryCode: 'KG',
-            onChanged: (phone) {
-              print(phone.completeNumber);
-            },
-          ),
-          Text("What's app номер жазыныз", style: TextStyles.description),
-          IntlPhoneField(
-            decoration: InputDecoration(
-              labelText: 'What\'s app номер жвзыныз',
-              border: OutlineInputBorder(
-                borderSide: BorderSide(),
-              ),
-            ),
-            initialCountryCode: 'KG',
-            onChanged: (phone) {
-              print(phone.completeNumber);
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
