@@ -8,12 +8,7 @@ class NewsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SingleChildScrollView(
       child: Column(
-        children: [
-          const SizedBox(
-            height: 20,
-          ),
-          NewsList()
-        ],
+        children: [NewsList()],
       ),
     );
   }

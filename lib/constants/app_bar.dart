@@ -28,40 +28,6 @@ class _AppBarWidgetState extends State<AppBarWidget> {
           child: Row(
             children: [
               // Expanded(
-              //   child: TextFormField(
-              //     onChanged: (val) {
-              //       Provider.of<Newsdata>(context, listen: false)
-              //           .filterNews(val);
-              //     },
-              //     style: Theme.of(context)
-              //         .textTheme
-              //         .headlineLarge!
-              //         .copyWith(fontSize: 16, fontWeight: FontWeight.w400),
-              //     enableSuggestions: false,
-              //     autocorrect: false,
-              //     decoration: InputDecoration(
-              //       filled: true, // Enables filling
-              //       fillColor: Colors.white, // Sets the background color
-
-              //       enabledBorder: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(12.0),
-              //         borderSide: BorderSide(color: Colors.white),
-              //       ),
-              //       focusedBorder: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(12.0),
-              //         borderSide: BorderSide.none,
-              //       ),
-              //       hintText: "hint_text",
-              //       prefixIcon: Container(
-              //         margin: const EdgeInsets.only(
-              //             left: 15, bottom: 10, right: 15, top: 16),
-              //         child: Icon(Icons.search),
-              //         // child: SvgPicture.asset(
-              //         //   'assets/icons/search_icon.svg',
-              //         // ),
-              //       ),
-              //     ),
-              //   ),
               // ),
               Expanded(
                   child: Text(
