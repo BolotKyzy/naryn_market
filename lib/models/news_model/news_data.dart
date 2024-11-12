@@ -46,4 +46,15 @@ class Newsdata extends ChangeNotifier {
     news.toggleFavorite();
     notifyListeners();
   }
+
+  void filterNews(String text) {
+    print(text);
+    // String query = text;
+    // if (query.isNotEmpty) {
+    //   _newsList = _newsList.where((News newItem) {
+    //     return newItem.description.toLowerCase().contains(query.toLowerCase());
+    //   }).toList();
+    // }
+    // notifyListeners();
+  }
 }
