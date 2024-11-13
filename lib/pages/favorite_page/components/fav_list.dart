@@ -30,14 +30,17 @@ class FavList extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 width: MediaQuery.of(context).size.width / 2.25,
-                height: 250,
+                height: 270,
                 clipBehavior: Clip.hardEdge, //default is none
 
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     border: Border.all(width: 1, color: AppColors.lightGrey)),
                 child: Column(children: [
-                  Image.asset(favItem.imgUrl),
+                  SizedBox(
+                    child: Image.asset(favItem.imgUrl),
+                    height: 110,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
