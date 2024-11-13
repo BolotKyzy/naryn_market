@@ -46,6 +46,7 @@ class NewsList extends StatelessWidget {
                     left: 15, bottom: 10, right: 15, top: 10),
                 child: Icon(
                   Icons.search,
+                  color: AppColors.darkBlue,
                   size: 30,
                 ),
                 // child: SvgPicture.asset(
