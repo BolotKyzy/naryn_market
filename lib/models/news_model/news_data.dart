@@ -26,7 +26,7 @@ class Newsdata extends ChangeNotifier {
         date: '07/11/2024',
         category: 'Телефондор (Электроника)'),
     News(
-        isFavorite: true,
+        isFavorite: false,
         id: 3,
         imgUrl: 'assets/icons/cow.jpg',
         description: 'Чон уй букасы менен сатылат',
@@ -36,7 +36,7 @@ class Newsdata extends ChangeNotifier {
         date: '10/10/2024',
         category: 'Мал чарба'),
     News(
-        isFavorite: true,
+        isFavorite: false,
         id: 3,
         imgUrl: 'assets/icons/iphone.jpg',
         description: 'Iphone сатылат',
@@ -46,7 +46,7 @@ class Newsdata extends ChangeNotifier {
         date: '10/10/2024',
         category: 'Телефондор (Электроника)'),
     News(
-        isFavorite: true,
+        isFavorite: false,
         id: 3,
         imgUrl: 'assets/icons/images.jpeg',
         description: 'уй сатылат',
@@ -57,6 +57,7 @@ class Newsdata extends ChangeNotifier {
         category: 'Телефондор (Электроника)'),
   ];
   List<News> filteredList = [];
+
   Newsdata() {
     filteredList = _newsList;
   }

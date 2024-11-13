@@ -43,8 +43,11 @@ class NewsList extends StatelessWidget {
               ),
               prefixIcon: Container(
                 margin: const EdgeInsets.only(
-                    left: 15, bottom: 10, right: 15, top: 16),
-                child: Icon(Icons.search),
+                    left: 15, bottom: 10, right: 15, top: 10),
+                child: Icon(
+                  Icons.search,
+                  size: 30,
+                ),
                 // child: SvgPicture.asset(
                 //   'assets/icons/search_icon.svg',
                 // ),
