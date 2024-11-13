@@ -41,7 +41,6 @@ class NewsList extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide: const BorderSide(color: AppColors.blue, width: 1),
               ),
-              hintText: "hint_text",
               prefixIcon: Container(
                 margin: const EdgeInsets.only(
                     left: 15, bottom: 10, right: 15, top: 16),
@@ -58,7 +57,7 @@ class NewsList extends StatelessWidget {
           Wrap(
             spacing: 15.0, // gap between adjacent chips
             runSpacing: 15.0, // gap between lines
-            children: news.newsList.map((newsItem) {
+            children: news.filteredList.map((newsItem) {
               return InkWell(
                 onTap: () {
                   Navigator.pushNamed(context, "newsDetailPage",
@@ -68,14 +67,17 @@ class NewsList extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                   width: MediaQuery.of(context).size.width / 2.25,
-                  height: 250,
+                  height: 270,
                   clipBehavior: Clip.hardEdge, //default is none
 
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(width: 1, color: AppColors.lightGrey)),
                   child: Column(children: [
-                    Image.asset(newsItem.imgUrl),
+                    SizedBox(
+                      child: Image.asset(newsItem.imgUrl),
+                      height: 110,
+                    ),
                     const SizedBox(
                       height: 10,
                     ),

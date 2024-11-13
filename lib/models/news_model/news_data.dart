@@ -9,8 +9,7 @@ class Newsdata extends ChangeNotifier {
         id: 99,
         isFavorite: true,
         imgUrl: 'assets/icons/car.jpeg',
-        description:
-            'Levelo Morphix Gripstand PU Leather Case - iPhone 14 Pro Max - Black',
+        description: 'Машина сатылат, абалы жакшы, суйлошуу жолу бар',
         price: 154000,
         phoneNumber: '+996990551897',
         whatsAppNumber: '+996990551897',
@@ -19,7 +18,7 @@ class Newsdata extends ChangeNotifier {
     News(
         isFavorite: true,
         id: 2,
-        imgUrl: 'assets/icons/car.jpeg',
+        imgUrl: 'assets/icons/redmi.jpg',
         description: 'Redmi Not 11 сатылат срочно!',
         price: 154000,
         phoneNumber: '+996990551897',
@@ -29,14 +28,38 @@ class Newsdata extends ChangeNotifier {
     News(
         isFavorite: true,
         id: 3,
-        imgUrl: 'assets/icons/car.jpeg',
+        imgUrl: 'assets/icons/cow.jpg',
         description: 'Чон уй букасы менен сатылат',
         price: 154000,
         phoneNumber: '+996990551897',
         whatsAppNumber: '+996990551897',
         date: '10/10/2024',
         category: 'Мал чарба'),
+    News(
+        isFavorite: true,
+        id: 3,
+        imgUrl: 'assets/icons/iphone.jpg',
+        description: 'Iphone сатылат',
+        price: 154000,
+        phoneNumber: '+996990551897',
+        whatsAppNumber: '+996990551897',
+        date: '10/10/2024',
+        category: 'Телефондор (Электроника)'),
+    News(
+        isFavorite: true,
+        id: 3,
+        imgUrl: 'assets/icons/images.jpeg',
+        description: 'уй сатылат',
+        price: 154000,
+        phoneNumber: '+996990551897',
+        whatsAppNumber: '+996990551897',
+        date: '10/10/2024',
+        category: 'Телефондор (Электроника)'),
   ];
+  List<News> filteredList = [];
+  Newsdata() {
+    filteredList = _newsList;
+  }
 
   UnmodifiableListView<News> get newsList {
     return UnmodifiableListView(_newsList);
@@ -49,16 +72,15 @@ class Newsdata extends ChangeNotifier {
 
   void filterNews(String text) {
     print(text == '');
-    List<News> filteredList = _newsList;
     String query = text;
-    if (query == '') {
-      _newsList = filteredList;
-      notifyListeners();
-    } else {
-      _newsList = filteredList.where((News newItem) {
+    if (query.isNotEmpty) {
+      filteredList = _newsList.where((News newItem) {
         return newItem.description.toLowerCase().contains(query.toLowerCase());
       }).toList();
-      notifyListeners();
+    } else {
+      filteredList = newsList;
+      print(_newsList);
     }
+    notifyListeners();
   }
 }
