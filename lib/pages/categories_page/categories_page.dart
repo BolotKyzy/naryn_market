@@ -41,34 +41,41 @@ class CategoriesPage extends StatelessWidget {
               runSpacing: 8.0,
               children: List.generate(
                   categoriesList.length,
-                  (index) => FractionallySizedBox(
-                        widthFactor: 0.3,
-                        child: Card(
-                            color: AppColors.grey,
-                            child: SizedBox(
-                              height: 70.0,
+                  (index) => Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 2),
+                        child: Container(
+                            decoration: BoxDecoration(
+                                border: Border.all(color: AppColors.darkBlue),
+                                borderRadius: BorderRadius.circular(10)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 5, vertical: 5),
                               child: InkWell(
-                                borderRadius: BorderRadius.circular(5.0),
                                 onTap: () {},
-                                child: Center(
-                                  child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          categoriesList[index]["icon"],
-                                          size: 20,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 5.0, right: 5.0),
-                                          child: Text(
-                                              categoriesList[index]["title"],
-                                              textAlign: TextAlign.center,
-                                              style: TextStyles.menu),
-                                        ),
-                                      ]),
-                                ),
+                                child: Row(children: [
+                                  Icon(
+                                    categoriesList[index]["icon"],
+                                    size: 40,
+                                    color: AppColors.lightBlack,
+                                  ),
+                                  const SizedBox(
+                                    width: 20,
+                                  ),
+                                  Expanded(
+                                    child: Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                          categoriesList[index]["title"],
+                                          textAlign: TextAlign.center,
+                                          style: TextStyles.menu),
+                                    ),
+                                  ),
+                                  Icon(
+                                    Icons.keyboard_arrow_right,
+                                    color: AppColors.lightBlack,
+                                  )
+                                ]),
                               ),
                             )),
                       )),

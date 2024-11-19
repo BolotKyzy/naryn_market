@@ -70,7 +70,7 @@ class NewsList extends StatelessWidget {
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                  width: MediaQuery.of(context).size.width / 2.25,
+                  width: MediaQuery.of(context).size.width / 2.3,
                   height: 270,
                   clipBehavior: Clip.hardEdge, //default is none
 
