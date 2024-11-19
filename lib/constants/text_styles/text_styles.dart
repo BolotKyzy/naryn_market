@@ -32,7 +32,7 @@ class TextStyles {
 
   static const menu = TextStyle(
       color: AppColors.lightBlack,
-      fontSize: 11,
+      fontSize: 16,
       fontFamily: 'NotoSans',
       fontWeight: FontWeight.w500);
   static const topSections = TextStyle(

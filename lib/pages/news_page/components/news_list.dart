@@ -31,15 +31,18 @@ class NewsList extends StatelessWidget {
 
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
-                borderSide: const BorderSide(color: AppColors.blue, width: 1),
+                borderSide:
+                    const BorderSide(color: AppColors.darkBlue, width: 1),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
-                borderSide: const BorderSide(color: AppColors.blue, width: 1),
+                borderSide:
+                    const BorderSide(color: AppColors.darkBlue, width: 1),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
-                borderSide: const BorderSide(color: AppColors.blue, width: 1),
+                borderSide:
+                    const BorderSide(color: AppColors.darkBlue, width: 1),
               ),
               prefixIcon: Container(
                 margin: const EdgeInsets.only(
@@ -70,50 +73,52 @@ class NewsList extends StatelessWidget {
                 child: Container(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                  width: MediaQuery.of(context).size.width / 2.25,
+                  width: MediaQuery.of(context).size.width / 2.3,
                   height: 270,
                   clipBehavior: Clip.hardEdge, //default is none
 
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 1, color: AppColors.lightGrey)),
-                  child: Column(children: [
-                    SizedBox(
-                      child: Image.asset(newsItem.imgUrl),
-                      height: 110,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      maxLines: 3,
-                      newsItem.description,
-                      style: TextStyles.description,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      border: Border.all(width: 1, color: AppColors.darkBlue)),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "${newsItem.price} сом",
-                          style: TextStyles.price,
+                        SizedBox(
+                          child: Image.asset(newsItem.imgUrl),
+                          height: 110,
                         ),
-                        InkWell(
-                          onTap: () {
-                            news.addToFavList(newsItem);
-                          },
-                          child: Icon(
-                            newsItem.isFavorite
-                                ? Icons.favorite
-                                : Icons.favorite_border_outlined,
-                            color: Colors.red,
-                          ),
-                        )
-                      ],
-                    ),
-                  ]),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          maxLines: 3,
+                          newsItem.description,
+                          style: TextStyles.description,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              "${newsItem.price} сом",
+                              style: TextStyles.price,
+                            ),
+                            InkWell(
+                              onTap: () {
+                                news.addToFavList(newsItem);
+                              },
+                              child: Icon(
+                                newsItem.isFavorite
+                                    ? Icons.favorite
+                                    : Icons.favorite_border_outlined,
+                                color: Colors.red,
+                              ),
+                            )
+                          ],
+                        ),
+                      ]),
                 ),
               );
             }).toList(),

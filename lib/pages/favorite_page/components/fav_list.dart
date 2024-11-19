@@ -35,7 +35,7 @@ class FavList extends StatelessWidget {
 
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: AppColors.lightGrey)),
+                    border: Border.all(width: 1, color: AppColors.darkBlue)),
                 child: Column(children: [
                   SizedBox(
                     child: Image.asset(favItem.imgUrl),
