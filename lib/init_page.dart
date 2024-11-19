@@ -39,7 +39,7 @@ class _InitPageState extends State<InitPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              color: AppColors.blue,
+              color: AppColors.darkBlue,
               Icons.newspaper,
               size: 40,
             ),
@@ -49,7 +49,7 @@ class _InitPageState extends State<InitPage> {
             icon: Icon(
               Icons.add_circle,
               size: 40,
-              color: AppColors.blue,
+              color: AppColors.darkBlue,
             ),
             label: 'Жарнама беруу',
           ),
@@ -57,7 +57,7 @@ class _InitPageState extends State<InitPage> {
             icon: Icon(
               Icons.widgets,
               size: 40,
-              color: AppColors.blue,
+              color: AppColors.darkBlue,
             ),
             label: 'Болумдор',
           ),
