@@ -32,17 +32,17 @@ class NewsList extends StatelessWidget {
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide:
-                    const BorderSide(color: AppColors.darkBlue, width: 1),
+                    BorderSide(color: AppColors.darkBlue.withOpacity(0.2)),
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide:
-                    const BorderSide(color: AppColors.darkBlue, width: 1),
+                    BorderSide(color: AppColors.darkBlue.withOpacity(0.2)),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12.0),
                 borderSide:
-                    const BorderSide(color: AppColors.darkBlue, width: 1),
+                    BorderSide(color: AppColors.darkBlue.withOpacity(0.2)),
               ),
               prefixIcon: Container(
                 margin: const EdgeInsets.only(
@@ -66,6 +66,7 @@ class NewsList extends StatelessWidget {
             runSpacing: 15.0, // gap between lines
             children: news.filteredList.map((newsItem) {
               return InkWell(
+                borderRadius: BorderRadius.circular(10),
                 onTap: () {
                   Navigator.pushNamed(context, "newsDetailPage",
                       arguments: newsItem.id);
@@ -75,11 +76,23 @@ class NewsList extends StatelessWidget {
                       const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                   width: MediaQuery.of(context).size.width / 2.3,
                   height: 270,
-                  clipBehavior: Clip.hardEdge, //default is none
-
+                  clipBehavior: Clip.hardEdge,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 1, color: AppColors.darkBlue)),
+                      color: Colors.white,
+                      border: Border.all(
+                          color: AppColors.darkBlue.withOpacity(0.2)),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                            color: AppColors.darkBlue.withOpacity(0.1),
+                            blurRadius: 8,
+                            offset: Offset(0, 2))
+                      ]),
+
+                  // decoration: BoxDecoration(
+                  //     borderRadius: BorderRadius.circular(20),
+                  //     border:
+                  //         Border.all(width: 0.5, color: AppColors.darkBlue)),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -91,7 +104,7 @@ class NewsList extends StatelessWidget {
                           height: 5,
                         ),
                         Text(
-                          maxLines: 3,
+                          maxLines: 4,
                           newsItem.description,
                           style: TextStyles.description,
                         ),

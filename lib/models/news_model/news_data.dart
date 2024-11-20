@@ -9,7 +9,8 @@ class Newsdata extends ChangeNotifier {
         id: 99,
         isFavorite: true,
         imgUrl: 'assets/icons/car.jpeg',
-        description: 'Машина сатылат, абалы жакшы, суйлошуу жолу бар',
+        description:
+            'Машина сатылат, абалы жакшы, суйлошуу жолу бар, Машина сатылат, абалы жакшы, суйлошуу жолу бар',
         price: 154000,
         phoneNumber: '+996990551897',
         whatsAppNumber: '+996990551897',
