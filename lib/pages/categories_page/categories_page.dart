@@ -46,8 +46,18 @@ class CategoriesPage extends StatelessWidget {
                             horizontal: 10, vertical: 2),
                         child: Container(
                             decoration: BoxDecoration(
-                                border: Border.all(color: AppColors.darkBlue),
-                                borderRadius: BorderRadius.circular(10)),
+                                color: Colors.white,
+                                border: Border.all(
+                                    color: AppColors.darkBlue.withOpacity(0.2)),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color:
+                                          AppColors.darkBlue.withOpacity(0.1),
+                                      blurRadius: 8,
+                                      offset: Offset(0, 2))
+                                ]),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 5, vertical: 5),

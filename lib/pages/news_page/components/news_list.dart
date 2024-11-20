@@ -88,11 +88,6 @@ class NewsList extends StatelessWidget {
                             blurRadius: 8,
                             offset: Offset(0, 2))
                       ]),
-
-                  // decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(20),
-                  //     border:
-                  //         Border.all(width: 0.5, color: AppColors.darkBlue)),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -123,10 +118,11 @@ class NewsList extends StatelessWidget {
                                 news.addToFavList(newsItem);
                               },
                               child: Icon(
-                                newsItem.isFavorite
-                                    ? Icons.favorite
-                                    : Icons.favorite_border_outlined,
-                                color: Colors.red,
+                                Icons.favorite,
+                                size: 25,
+                                color: newsItem.isFavorite
+                                    ? Colors.red.withOpacity(0.8)
+                                    : AppColors.lightGrey.withOpacity(0.5),
                               ),
                             )
                           ],
