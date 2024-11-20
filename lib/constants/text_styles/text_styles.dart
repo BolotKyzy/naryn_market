@@ -5,7 +5,7 @@ class TextStyles {
   static const description = TextStyle(
       color: AppColors.lightBlack,
       fontFamily: 'NotoSans',
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: FontWeight.w500);
   static const newsDetailDesc = TextStyle(
       color: AppColors.lightBlack,

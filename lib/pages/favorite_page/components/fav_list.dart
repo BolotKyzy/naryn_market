@@ -35,7 +35,7 @@ class FavList extends StatelessWidget {
 
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(width: 1, color: AppColors.darkBlue)),
+                    border: Border.all(width: 0.5, color: AppColors.darkBlue)),
                 child: Column(children: [
                   SizedBox(
                     child: Image.asset(favItem.imgUrl),
@@ -46,7 +46,7 @@ class FavList extends StatelessWidget {
                   ),
                   Text(
                     favItem.description,
-                    maxLines: 3,
+                    maxLines: 4,
                     style: TextStyles.description,
                   ),
                   const SizedBox(

@@ -36,10 +36,9 @@ class _InitPageState extends State<InitPage> {
         CategoriesPage()
       ]),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              color: AppColors.darkBlue,
               Icons.newspaper,
               size: 40,
             ),
@@ -49,7 +48,6 @@ class _InitPageState extends State<InitPage> {
             icon: Icon(
               Icons.add_circle,
               size: 40,
-              color: AppColors.darkBlue,
             ),
             label: 'Жарнама беруу',
           ),
@@ -57,20 +55,22 @@ class _InitPageState extends State<InitPage> {
             icon: Icon(
               Icons.widgets,
               size: 40,
-              color: AppColors.darkBlue,
             ),
             label: 'Болумдор',
           ),
         ],
         currentIndex: _selectedIndex,
+        selectedIconTheme: IconThemeData(color: AppColors.darkBlue),
+        unselectedIconTheme: IconThemeData(color: AppColors.lightGrey),
         selectedItemColor: AppColors.darkBlue,
+        unselectedItemColor: AppColors.darkGrey,
         unselectedLabelStyle: const TextStyle(
             fontFamily: 'NotoSans',
             fontSize: 14,
             fontWeight: FontWeight.w400,
             color: AppColors.lightBlack),
         selectedLabelStyle: const TextStyle(
-            fontFamily: 'NotoSans', fontSize: 16, fontWeight: FontWeight.w600),
+            fontFamily: 'NotoSans', fontSize: 16, fontWeight: FontWeight.w400),
         onTap: _onItemTapped,
       ),
     );
