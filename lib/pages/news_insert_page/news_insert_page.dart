@@ -102,20 +102,14 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                 color: Colors.white,
                 border: Border.all(color: AppColors.lightGrey.withOpacity(0.6)),
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                // boxShadow: [
-                //   BoxShadow(
-                //       color: AppColors.darkBlue.withOpacity(0.1),
-                //       blurRadius: 8,
-                //       offset: Offset(0, 2))
-                // ]
               ),
-              // color: AppColors.starGrey,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: DropdownButton<String>(
                   value: selectedCategory,
                   style: TextStyles.newsCreateTitle,
                   isExpanded: true,
+                  isDense: true,
                   hint: Text(
                     "Категория танданыз",
                     style: TextStyles.newsCreateTitle,
@@ -123,6 +117,7 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                   borderRadius: BorderRadius.circular(40),
                   items: categoryTitles.map((String title) {
                     return DropdownMenuItem<String>(
+                      alignment: AlignmentDirectional.centerStart,
                       value: title,
                       child: Text(title),
                     );
