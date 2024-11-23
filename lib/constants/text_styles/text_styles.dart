@@ -43,6 +43,12 @@ class TextStyles {
 
   static const newsDetailDate = TextStyle(
       color: AppColors.lightBlack, fontFamily: 'NotoSans', fontSize: 14);
+  static const newsCreateTitle = TextStyle(
+    color: AppColors.lightBlack,
+    fontFamily: 'NotoSans',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  );
 
-  TextStyles(description);
+  // TextStyles(description);
 }
