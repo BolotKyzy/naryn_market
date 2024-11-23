@@ -26,6 +26,7 @@ class _InitPageState extends State<InitPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBarWidget(),
       body: IndexedStack(index: _selectedIndex, children: [
         ChangeNotifierProvider<Newsdata>(
@@ -36,6 +37,7 @@ class _InitPageState extends State<InitPage> {
         CategoriesPage()
       ]),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(

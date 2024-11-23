@@ -26,21 +26,26 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Суроттор", style: TextStyles.description),
-            Text("Жарыяныздын суроту болсо, томонго жуктонуз"),
+            const Text(
+              "Жарыяныздын суротун жуктонуз",
+              style: TextStyles.newsCreateTitle,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             StaggeredGrid.count(
-              crossAxisCount: 4,
-              mainAxisSpacing: 4,
-              crossAxisSpacing: 4,
+              crossAxisCount: 6,
+              mainAxisSpacing: 8,
+              crossAxisSpacing: 8,
               children: [
                 StaggeredGridTile.count(
-                  crossAxisCellCount: 2,
+                  crossAxisCellCount: 4,
                   mainAxisCellCount: 2,
                   child: Container(
-                    child: Icon(Icons.add),
-                    color: AppColors.cartGreyColor,
+                    child: const Icon(Icons.add),
+                    color: AppColors.starGrey,
                   ),
                 ),
                 StaggeredGridTile.count(
@@ -48,7 +53,7 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                   mainAxisCellCount: 1,
                   child: Container(
                     child: Icon(Icons.add),
-                    color: AppColors.cartGreyColor,
+                    color: AppColors.starGrey,
                   ),
                 ),
                 StaggeredGridTile.count(
@@ -56,7 +61,7 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                   mainAxisCellCount: 1,
                   child: Container(
                     child: Icon(Icons.add),
-                    color: AppColors.cartGreyColor,
+                    color: AppColors.starGrey,
                   ),
                 ),
                 StaggeredGridTile.count(
@@ -64,7 +69,7 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                   mainAxisCellCount: 1,
                   child: Container(
                     child: Icon(Icons.add),
-                    color: AppColors.cartGreyColor,
+                    color: AppColors.starGrey,
                   ),
                 ),
                 StaggeredGridTile.count(
@@ -72,53 +77,76 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                   mainAxisCellCount: 1,
                   child: Container(
                     child: Icon(Icons.add),
-                    color: AppColors.cartGreyColor,
+                    color: AppColors.starGrey,
                   ),
                 ),
               ], // End off grid
             ),
-            Text(
-              "Муноздомо",
-              style: TextStyles.description,
+            const SizedBox(
+              height: 20,
             ),
             TextField(
               maxLength: 300,
               onChanged: (context) {},
-              maxLines: 4,
-              decoration: InputDecoration(hintText: "Бул жерге жазыныз"),
+              maxLines: 3,
+              decoration:
+                  InputDecoration(hintText: "Бул жерге жарнаманызды жазыныз"),
             ),
-            Text(
-              "Категориялар",
-              style: TextStyles.description,
+            const SizedBox(
+              height: 20,
             ),
             Container(
               height: 50,
               width: 400,
-              color: AppColors.starGrey,
-              child: DropdownButton<String>(
-                value: selectedCategory,
-                hint: Text("Категория танданыз"),
-                borderRadius: BorderRadius.circular(40),
-                items: categoryTitles.map((String title) {
-                  return DropdownMenuItem<String>(
-                    value: title,
-                    child: Text(title),
-                  );
-                }).toList(),
-                onChanged: (String? newValue) {
-                  setState(() {
-                    selectedCategory = newValue;
-                  });
-                },
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: AppColors.lightGrey.withOpacity(0.6)),
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                // boxShadow: [
+                //   BoxShadow(
+                //       color: AppColors.darkBlue.withOpacity(0.1),
+                //       blurRadius: 8,
+                //       offset: Offset(0, 2))
+                // ]
+              ),
+              // color: AppColors.starGrey,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: DropdownButton<String>(
+                  value: selectedCategory,
+                  style: TextStyles.newsCreateTitle,
+                  isExpanded: true,
+                  hint: Text(
+                    "Категория танданыз",
+                    style: TextStyles.newsCreateTitle,
+                  ),
+                  borderRadius: BorderRadius.circular(40),
+                  items: categoryTitles.map((String title) {
+                    return DropdownMenuItem<String>(
+                      value: title,
+                      child: Text(title),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedCategory = newValue;
+                    });
+                  },
+                ),
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             Text(
-              "Телефон номеринизди жазыныз",
-              style: TextStyles.description,
+              "Телефон номериниз: ",
+              style: TextStyles.newsCreateTitle,
+            ),
+            const SizedBox(
+              height: 5,
             ),
             IntlPhoneField(
               decoration: InputDecoration(
-                labelText: 'Телефон номер',
                 border: OutlineInputBorder(
                   borderSide: BorderSide(),
                 ),
@@ -128,12 +156,19 @@ class _NewsInsertPageState extends State<NewsInsertPage> {
                 print(phone.completeNumber);
               },
             ),
-            Text("What's app номер жазыныз", style: TextStyles.description),
+            const SizedBox(
+              height: 10,
+            ),
+            Text("What's app номериниз: ", style: TextStyles.newsCreateTitle),
+            const SizedBox(
+              height: 5,
+            ),
             IntlPhoneField(
               decoration: InputDecoration(
-                labelText: 'What\'s app номер жвзыныз',
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  borderSide:
+                      BorderSide(color: AppColors.darkBlue.withOpacity(0.2)),
                 ),
               ),
               initialCountryCode: 'KG',
